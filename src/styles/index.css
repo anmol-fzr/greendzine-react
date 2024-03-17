@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --rsbs-bg: #111;
+  --rsbs-handle-bg: #000;
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+.morp {
+  background: #eef0f4;
+  border-radius: 15%;
+  box-shadow:
+    inset 9.91px 9.91px 15px #d9dade,
+    inset -9.91px -9.91px 15px #ffffff;
+}
+
+[data-rbs-overlay] {
+  background: black;
+}
