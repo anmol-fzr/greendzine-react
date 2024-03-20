@@ -29,6 +29,9 @@ const Home = () => {
   return (
     <div className="flex items-center justify-center h-screen w-screen">
       <div className="space-y-6 max-w-screen-md m-auto">
+        <div className="space-y-6 my-4">
+          <img className="h-[90px] w-[90px] mx-auto" src="/main-logo.png" />
+        </div>
         <p className="bg-[#1A2C2C99] h-[45px]  items-center px-4 flex justify-center text-xl text-center rounded-3xl">
           Employee Productivity Dashboard
         </p>

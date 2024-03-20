@@ -29,6 +29,9 @@ const List = () => {
 
   return (
     <div className="pt-12 flex flex-col items-center ">
+      <div className="space-y-6 my-6">
+        <img className="h-[90px] w-[90px]" src="/main-logo.png" />
+      </div>
       <input
         className={baseClassName}
         placeholder="Search by Name"

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { loginSchema } from "@/schema";
 import { useNavigate } from "react-router-dom";
@@ -15,7 +15,12 @@ const Login = () => {
     resolver: yupResolver(loginSchema),
   });
 
-  const { handleSubmit } = methods;
+  const { handleSubmit, setValue } = methods;
+
+  useEffect(() => {
+    setValue("email", envs.MAIL);
+    setValue("password", envs.PASS);
+  }, []);
 
   const onOpen = () => setIsOpen(true);
   const onClose = () => setIsOpen(false);
@@ -30,6 +35,10 @@ const Login = () => {
 
   return (
     <div className="h-screen w-screen flex flex-col items-center justify-center">
+      <div className="space-y-6 my-6">
+        <img className="h-[90px] w-[90px]" src="/logo.png" />
+        <p className="text-[#36A546CC]">#We are Electric</p>
+      </div>
       <FormProvider {...methods}>
         <form
           className="p-4 space-y-6 max-w-md w-full"
@@ -46,6 +55,7 @@ const Login = () => {
           </div>
           <Button type="submit">Login</Button>
           <button
+            type="button"
             className="text-green-dark w-fit mx-auto text-center"
             onClick={onOpen}
           >
